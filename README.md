@@ -12,13 +12,21 @@ The real benefit is the cleaness of the API. The constructors of the command and
 
 ###Clean API (I in SOLID)
 ```
-var command = new Command();
-var handler = new HandlerFinder().find(command);
-var result handler->handle(command);
-```
-or
-```
-var result = new HandlerFinder().handle(new Command());
+var MowLawn = require('./../commands/mowLawn'),
+  RakeLeaves = require('./../commands/rakeLeaves');
+
+var commandHandlerFactory = require('./../commandHandlerFactory'),
+  CommandHandlerFinder = require('./../commandHandlerFinder'),
+  commandHandlerFinder = new CommandHandlerFinder(commandHandlerFactory),
+  mowLawn = new MowLawn('1234 Tech Street', new Date()),
+  mowLawnResult = commandHandlerFinder.handle(mowLawn);
+
+console.log(mowLawnResult);
+
+
+rakeLeavesResult = commandHandlerFinder.handle(new RakeLeaves('1234 Yay Lane', new Date()));
+console.log(rakeLeavesResult);
+
 ```
 
 ###Clean Separating of Concerns (S in SOLID)
