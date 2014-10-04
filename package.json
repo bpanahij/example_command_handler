@@ -1,0 +1,22 @@
+{
+  "name": "example_command_pattern",
+  "version": "0.0.0",
+  "description": "An example implementation of the Command Pattern",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "vows --spec test/*"
+  },
+  "keywords": [
+    "command",
+    "pattern",
+    "example"
+  ],
+  "author": "Brian P. Johnson",
+  "license": "ISC",
+  "devDependencies": {
+    "vows": "^0.7.0"
+  }
+}
