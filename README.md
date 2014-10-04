@@ -34,8 +34,18 @@ console.log(rakeLeavesResult);
 
 ###Dependeny Inversion (D in SOLID)
 Also know as dependency injection (DI), or at least satisfied by extensive DI. This example uses DI throughout, and thus allows the top level controller, or in this case a factory to handle all dependencies.
-
+```
+/**
+ *
+ * @constructor
+ */
+var CommandHandlerFinder = function(commandHandlerFactory) {
+  this.commandHandlerFactory = commandHandlerFactory;
+};
+...
+```
 ##The non-solid compromises
+
 ###Open Closed (O in SOLID)
 Javascript siffers from weaknesses in this arena. This code could easily use closures to obey the O. Currently the 
 example does not satisfy O.
